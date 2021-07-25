@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ford Thermo Server</title>    
+  </head>
+  <body>
+    <h1>Welcome to the Ford Thermo Server</h1>
+    <p> Note: this server is built by Dallen Ford for ECE 531 at UNM, and does not control an actual thermostat.
+    <p><form action="login" method="POST" name="loginForm">
+    	User Name:<input type="text" name="username"/><br/>
+    	Password:<input type="password" name="password"/><br/>
+    	<input type="submit" value="submit"/>
+    </form>
+    <script>
+    var formData = JSON.stringify($("#loginForm").serializeArray());
+    $.ajax({
+    	type: "POST",
+    	url: "login",
+    	data: formData,
+    	success: function(){},
+    	dataType: "json",
+    	contentType : "application/json"
+    });
+    </script>
+  </body>
+</html>
